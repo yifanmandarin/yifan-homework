@@ -161,7 +161,7 @@ export class Quiz1 extends Component {
                 </div>
 
                 <div className="green">
-                    {currentIndex < this.quizSet.length - 1 && 
+                    {currentIndex <= this.quizSet.length - 1 && 
                     <button onClick={this.checkAnswer}>
                         Check Answer
                     </button>
@@ -184,8 +184,9 @@ export class Quiz1 extends Component {
                         Next Question
                     </button>}
 
+
                     {currentIndex === this.quizSet.length - 1 && 
-                    <button onClick={this.finishHandler}>
+                    <button disabled = {this.state.disabled} onClick={this.finishHandler}>
                         Finish
                     </button>
                     }
