@@ -6,13 +6,15 @@ import Nav from './Nav';
 import Quiz from './Quiz';
 import {Quiz1, Quiz2} from './Quiz1';
 import Homework from './Homework';
+import {Int_hw_month, Nat_hw_month} from './Homework';
 import Reading from './Reading';
-import {Hw1, Hw2} from './Hw1';
+import {six_to_seven_Hw1, six_to_seven_Hw2, six_to_seven_Hw3, eight_to_nine_Hw1} from './Nat-hw-sep';
 import Int_read from './Int-read';
 import {iReading1, iReading2} from './IntReading0';
 import Nat_read from './Native-read';
 import {nReading1, nReading2} from './NatReading0';
-import {natReadQ1, natReadQ2} from './NatReadQ';
+import {nat_hw_sep, six_to_seven, eight_to_nine} from './Nat-hw-sep';
+import {int_hw_sep, int_six_to_seven, int_eight_to_nine, int_six_to_seven_Hw1, int_eight_to_nine_Hw1} from './Int-hw-sep'
 
 
 function App() {
@@ -34,8 +36,21 @@ function App() {
                 {/*<Route path="/yifan-homework/reading/native/reading1/q1" component={natReadQ1} />*/}
               <Route path="/yifan-homework/reading/native/reading2" component={nReading2} />
           <Route path="/yifan-homework/homework" exact component={Homework} />
-            <Route path="/yifan-homework/homework/hw1" component={Hw1} />
-            <Route path="/yifan-homework/homework/hw2" component={Hw2} />
+            <Route path="/yifan-homework/homework/native" exact component={Nat_hw_month} />
+              <Route path="/yifan-homework/homework/native/sep20" exact component={nat_hw_sep} />
+                <Route path="/yifan-homework/homework/native/sep20/6to7" exact component={six_to_seven} />
+                <Route path="/yifan-homework/homework/native/sep20/8to9" exact component={eight_to_nine} />
+                  <Route path="/yifan-homework/homework/native/sep20/6to7/hw1" component={six_to_seven_Hw1} />
+                  <Route path="/yifan-homework/homework/native/sep20/6to7/hw2" component={six_to_seven_Hw2} />
+                  <Route path="/yifan-homework/homework/native/sep20/6to7/hw3" component={six_to_seven_Hw3} />
+                  <Route path="/yifan-homework/homework/native/sep20/8to9/hw1" component={eight_to_nine_Hw1} />
+            <Route path="/yifan-homework/homework/international" exact component={Int_hw_month} />
+              <Route path="/yifan-homework/homework/international/sep20" exact component={int_hw_sep} />
+                  <Route path="/yifan-homework/homework/international/sep20/6to7" exact component={int_six_to_seven} />
+                  <Route path="/yifan-homework/homework/international/sep20/8to9" exact component={int_eight_to_nine} />
+                    <Route path="/yifan-homework/homework/international/sep20/6to7/hw1" component={int_six_to_seven_Hw1} />
+                    <Route path="/yifan-homework/homework/international/sep20/8to9/hw1" component={int_eight_to_nine_Hw1} />
+              
           <Route path="/yifan-homework" exact component={Home}/>
           {/*<Route render={() => <Redirect to={{pathname: "/yifan-homework"}} />} />*/}
         </Switch>
