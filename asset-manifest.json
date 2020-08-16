@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/yifan-homework/static/css/main.d712b0c6.chunk.css",
-    "main.js": "/yifan-homework/static/js/main.5f2f560b.chunk.js",
-    "main.js.map": "/yifan-homework/static/js/main.5f2f560b.chunk.js.map",
+    "main.css": "/yifan-homework/static/css/main.d1dd6df7.chunk.css",
+    "main.js": "/yifan-homework/static/js/main.538efdbd.chunk.js",
+    "main.js.map": "/yifan-homework/static/js/main.538efdbd.chunk.js.map",
     "runtime-main.js": "/yifan-homework/static/js/runtime-main.c5ffd070.js",
     "runtime-main.js.map": "/yifan-homework/static/js/runtime-main.c5ffd070.js.map",
     "static/js/2.046ce8da.chunk.js": "/yifan-homework/static/js/2.046ce8da.chunk.js",
     "static/js/2.046ce8da.chunk.js.map": "/yifan-homework/static/js/2.046ce8da.chunk.js.map",
     "index.html": "/yifan-homework/index.html",
-    "precache-manifest.31cc1415567869778af082f852cbf202.js": "/yifan-homework/precache-manifest.31cc1415567869778af082f852cbf202.js",
+    "precache-manifest.bb69c44357327a2b37dde650f8ba4bde.js": "/yifan-homework/precache-manifest.bb69c44357327a2b37dde650f8ba4bde.js",
     "service-worker.js": "/yifan-homework/service-worker.js",
-    "static/css/main.d712b0c6.chunk.css.map": "/yifan-homework/static/css/main.d712b0c6.chunk.css.map",
+    "static/css/main.d1dd6df7.chunk.css.map": "/yifan-homework/static/css/main.d1dd6df7.chunk.css.map",
     "static/js/2.046ce8da.chunk.js.LICENSE.txt": "/yifan-homework/static/js/2.046ce8da.chunk.js.LICENSE.txt",
     "static/media/20200113-MFM-season.mp3": "/yifan-homework/static/media/20200113-MFM-season.ec3cde7b.mp3",
     "static/media/YM-story--who-ate-the-cake.mp4": "/yifan-homework/static/media/YM-story--who-ate-the-cake.26fd64c9.mp4",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.c5ffd070.js",
     "static/js/2.046ce8da.chunk.js",
-    "static/css/main.d712b0c6.chunk.css",
-    "static/js/main.5f2f560b.chunk.js"
+    "static/css/main.d1dd6df7.chunk.css",
+    "static/js/main.538efdbd.chunk.js"
   ]
 }
