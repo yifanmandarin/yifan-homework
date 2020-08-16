@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import {Quizdata1, Quizdata2} from './Quizdata1';
+import {intReadSet1, intReadSet2} from './IntReadData';
 import './App.css';
 import { Link } from 'react-router-dom';
 
-export class Quiz1 extends Component {
+export class IntReadQ1 extends Component {
     
     constructor(props) {
         super(props)
         
         this.message = null
         this.number = 1
-        this.quizSet = Quizdata1
+        this.quizSet = intReadSet1
         this.state = {
             userAnswer: null,
             currentIndex: 0,
@@ -109,20 +109,20 @@ export class Quiz1 extends Component {
         if(quizEnd) {
             return (
                 <div>
-                    <div className="center">
+                    <div className="centerlist">
                         <h1>Quiz Over. Final score is {this.state.score} points.</h1>
-                        <p>The correct Answers for the quiz are: </p>
+                        {/*<p>The correct Answers for the quiz are: </p>
                         <ul>
                             {this.quizSet.map((item, index) => 
                                 <li className="options" key={index}>
                                     {item.answer}
                                 </li>
                             )}
-                        </ul>
+                            </ul>*/}
                     </div>
                     <div className="green">
-                        <Link to="/yifan-homework/quiz"><button>
-                            Back to Quiz Page
+                        <Link to="/yifan-homework/reading"><button>
+                            Back to Reading Page
                         </button></Link>
                     </div>
                 </div>
@@ -199,15 +199,13 @@ export class Quiz1 extends Component {
 }
 
 
-
-
-export class Quiz2 extends Quiz1{
+export class IntReadQ2 extends IntReadQ1{
 
     constructor(props) {
         super(props)
         
         this.number = 2
-        this.quizSet = Quizdata2
+        this.quizSet = intReadSet2
         
     }
 

@@ -12,7 +12,7 @@ import Int_read from './Int-read';
 import {iReading1, iReading2} from './IntReading0';
 import Nat_read from './Native-read';
 import {nReading1, nReading2} from './NatReading0';
-
+import {natReadQ1, natReadQ2} from './NatReadQ';
 
 
 function App() {
@@ -30,7 +30,8 @@ function App() {
               <Route path="/yifan-homework/reading/international/reading1" component={iReading1} />
               <Route path="/yifan-homework/reading/international/reading2" component={iReading2} />
             <Route path="/yifan-homework/reading/native" exact component={Nat_read} />
-              <Route path="/yifan-homework/reading/native/reading1" component={nReading1} />
+              <Route path="/yifan-homework/reading/native/reading1" exact component={nReading1} />
+                {/*<Route path="/yifan-homework/reading/native/reading1/q1" component={natReadQ1} />*/}
               <Route path="/yifan-homework/reading/native/reading2" component={nReading2} />
           <Route path="/yifan-homework/homework" exact component={Homework} />
             <Route path="/yifan-homework/homework/hw1" component={Hw1} />
@@ -54,7 +55,7 @@ const Home = () => (
         <h1 style={{color: "orange", fontFamily: "arial", fontSize: "7vh"}}>Welcome to Yifan Homework!</h1>
           <h2>Yifan Homework is a platform where children can learn mandarin at home too! We will provide them with after-class homework, audio recordings, practises as well as quizzes!</h2>
           {/*<h2>It can be categorized into 3 big types: </h2>*/}
-            <ul>
+            <ul className="nostylelist">
               <Link to="/yifan-homework/homework">
                 <li style={listStyle}><strong>Homework / Audio Recording (课堂录音)</strong></li>
               </Link> 

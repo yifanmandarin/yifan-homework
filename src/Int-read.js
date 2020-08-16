@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 function Int_read() {
     
     const listyle = {
-        margin: "5px"
+        padding: "5px",
+        fontSize: "3vh"
     }
   
     return (
@@ -22,6 +23,9 @@ function Int_read() {
           <ul >
               <Link to="/yifan-homework/reading/international/reading1"><li style={listyle}>2020.9.2.</li></Link>
               <Link to="/yifan-homework/reading/international/reading2"><li style={listyle}>2020.9.9.</li></Link>
+              <Link to="/yifan-homework/reading/international/reading3"><li style={listyle}>2020.9.16.</li></Link>
+              <Link to="/yifan-homework/reading/international/reading4"><li style={listyle}>2020.9.23.</li></Link>
+              <Link to="/yifan-homework/reading/international/reading5"><li style={listyle}>2020.9.30.</li></Link>
           </ul>
         </div>
       </body>

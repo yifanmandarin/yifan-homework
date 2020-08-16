@@ -79,12 +79,20 @@ li {
   background: yellow;
 }
 
+.center .options{
+  text-align: center;
+  display: inline-block;
+  margin-left: 4vw;
+}
+
 .options {
   padding: 8px;
   margin: auto 8vw;
   border: 3px solid #000;
   cursor: pointer;
-  width: 80%;
+  width: 40%;
+  text-align: center;
+  justify-content: space-around;
   /*background-color: white;*/
   color: steelblue;
   font-weight: bold;

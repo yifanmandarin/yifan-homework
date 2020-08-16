@@ -1,6 +1,7 @@
 import React from 'react';
 import yifanlogo from './img/yifan-logo.png';
 import './App.css';
+import {IntReadQ1, IntReadQ2} from './IntReadQ'
 import read1 from './img/int-read-1.PNG';
 import read2 from './img/int-read-2.PNG';
 
@@ -16,6 +17,9 @@ export function iReading1() {
       <body>
         <div>
           <img src={read1} alt="reading 1" width="1000" />
+        </div>
+        <div>
+          <IntReadQ1 />
         </div>
       </body>
     </div>
@@ -33,6 +37,9 @@ export function iReading2() {
           <body>
             <div>
               <img src={read2} alt="reading 2" width="1000" />
+            </div>
+            <div>
+              <IntReadQ2 />
             </div>
           </body>
         </div>
