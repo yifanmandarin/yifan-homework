@@ -48,7 +48,7 @@ export const Quizdata2 = [
         id: 0,
         question: `下列哪个是正确的量词运用？`,
         options: ["一块蛋糕", "一个马", "一头人", "一只面包"],
-        answer: "一块蛋"
+        answer: "一块蛋糕"
     },
     {
         id: 1,

@@ -89,7 +89,9 @@ li {
   color: steelblue;
   font-weight: bold;
   border-radius: 7px;
+  font-size: 3vh;
 }
+
 /* ul {
   list-style-type: none;
 }
@@ -111,7 +113,7 @@ ul li {
   color: tomato;
 }*/
 
-button {
+.Reading button, .green button {
   background-color: #4CAF50; /* Green */
   border: none;
   justify-content: center;
@@ -124,7 +126,8 @@ button {
   margin: auto 5px;
 }
 
-button:hover {
+.Reading button:hover, .green button:hover {
   background-color: blue;
   cursor: pointer;
 }
+

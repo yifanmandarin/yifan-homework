@@ -7,7 +7,8 @@ export class Quiz1 extends Component {
     
     constructor(props) {
         super(props)
-
+        
+        this.message = null
         this.number = 1
         this.quizSet = Quizdata1
         this.state = {
@@ -17,6 +18,7 @@ export class Quiz1 extends Component {
             quizEnd: false,
             score: 0,
             disabled: true,
+            optdisabled: false
         }
     }
     
@@ -32,7 +34,7 @@ export class Quiz1 extends Component {
     }
 
     nextQuestionHandler = () => {
-        const {userAnswer, answer, score, disabled} = this.state;
+        const {userAnswer, answer, score, disabled, optdisabled} = this.state;
 
         if(userAnswer === answer){
             this.setState({
@@ -43,7 +45,8 @@ export class Quiz1 extends Component {
         this.setState({
             currentIndex: this.state.currentIndex + 1,
             userAnswer: null,
-            disabled: true
+            disabled: true,
+            optdisabled: false
         })
     }
 
@@ -51,11 +54,25 @@ export class Quiz1 extends Component {
         this.loadQuiz();
     }
     
-    checkAnswer = answer => {
+    validateAnswer = ans => {
         this.setState({
-            userAnswer: answer,
-            disabled: false
+            userAnswer: ans,
         })
+    }
+
+    checkAnswer = () => {
+        const {userAnswer, answer, score, disabled} = this.state;
+
+        this.setState({
+            disabled: false,
+            optdisabled: true
+        })
+        if(userAnswer === answer){
+            this.message = "Correct! 正确! ✔";
+        } else {
+            this.message = "Wrong! 错误! ✖";
+        }
+
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -113,6 +130,18 @@ export class Quiz1 extends Component {
             )
         }
 
+        {/*const buttonstyle = {
+            padding: "8px",
+            margin: "auto 8vw",
+            border: "3px solid #000",
+            cursor: "pointer",
+            width: "80%",
+            /*background-color: white;
+            color: "steelblue",
+            fontWeight: "bold",
+            borderRadius: "7px"
+        }*/}
+
         return (
             <div id={`Quiz1`}>
                 <h1>Welcome to Quiz {this.number}!</h1>
@@ -120,36 +149,54 @@ export class Quiz1 extends Component {
                     <span>{`Question ${currentIndex + 1} of ${this.quizSet.length}`}</span>
                     {
                         options.map(option =>
-                            <p key={option.id} className={`options ${userAnswer === option ? "selected" : null}`} 
-                            onClick= {() => this.checkAnswer(option)} > 
+                            <button key={option.id} disabled={this.state.optdisabled} className={`options ${userAnswer === option ? "selected" : null}`} 
+                            onClick= {() => this.validateAnswer(option)} > 
                                 {option}
-                            </p>
+                            </button>
                         )
                     }
-
+                
                 <div>
                     <h1>  </h1>
                 </div>
 
+                <div className="green">
+                    {currentIndex < this.quizSet.length - 1 && 
+                    <button onClick={this.checkAnswer}>
+                        Check Answer
+                    </button>
+                    }
+                    {this.state.disabled === false && 
+                    <div>
+                        <p style={{fontSize: "4vh"}}>{this.message}</p>
+                        <p style={{fontSize: "4vh", color: "green"}}>正确答案是: {this.state.answer}</p>
+                    </div>
+                    }
+                </div>
+
+                <div>
+                    <h1></h1>
+                </div>
+                
+                <div className="green">
                     {currentIndex < this.quizSet.length - 1 && 
                     <button disabled = {this.state.disabled} onClick={this.nextQuestionHandler}>
                         Next Question
                     </button>}
-
-                <div>
-                    <h1>  </h1>
-                </div>
 
                     {currentIndex === this.quizSet.length - 1 && 
                     <button onClick={this.finishHandler}>
                         Finish
                     </button>
                     }
+                </div>
                 
             </div>
         )
     }    
 }
+
+
 
 
 export class Quiz2 extends Quiz1{
