@@ -8,13 +8,15 @@ export class Quiz1 extends Component {
     constructor(props) {
         super(props)
 
+        this.number = 1
+        this.quizSet = Quizdata1
         this.state = {
             userAnswer: null,
             currentIndex: 0,
             options: [],
             quizEnd: false,
             score: 0,
-            disabled: true
+            disabled: true,
         }
     }
     
@@ -22,9 +24,9 @@ export class Quiz1 extends Component {
         const {currentIndex} = this.state;
         this.setState(() => {
             return {
-                question: Quizdata1[currentIndex].question,
-                options: Quizdata1[currentIndex].options,
-                answer: Quizdata1[currentIndex].answer
+                question: this.quizSet[currentIndex].question,
+                options: this.quizSet[currentIndex].options,
+                answer: this.quizSet[currentIndex].answer
             }
         })
     }
@@ -61,9 +63,9 @@ export class Quiz1 extends Component {
         if (this.state.currentIndex != prevState.currentIndex) {
             this.setState(() => {
                 return {
-                    question: Quizdata1[currentIndex].question,
-                    options: Quizdata1[currentIndex].options,
-                    answer: Quizdata1[currentIndex].answer
+                    question: this.quizSet[currentIndex].question,
+                    options: this.quizSet[currentIndex].options,
+                    answer: this.quizSet[currentIndex].answer
                 }
             });
         }
@@ -77,7 +79,7 @@ export class Quiz1 extends Component {
                 score: score + 1
             })
         }
-        if (this.state.currentIndex === Quizdata1.length - 1) {
+        if (this.state.currentIndex === this.quizSet.length - 1) {
             this.setState({
                 quizEnd: true
             })
@@ -94,7 +96,7 @@ export class Quiz1 extends Component {
                         <h1>Quiz Over. Final score is {this.state.score} points.</h1>
                         <p>The correct Answers for the quiz are: </p>
                         <ul>
-                            {Quizdata1.map((item, index) => 
+                            {this.quizSet.map((item, index) => 
                                 <li className="options" key={index}>
                                     {item.answer}
                                 </li>
@@ -113,9 +115,9 @@ export class Quiz1 extends Component {
 
         return (
             <div id={`Quiz1`}>
-                <h1>Welcome to Quiz 1!</h1>
+                <h1>Welcome to Quiz {this.number}!</h1>
                     <h2>{question}</h2>
-                    <span>{`Question ${currentIndex + 1} of ${Quizdata1.length}`}</span>
+                    <span>{`Question ${currentIndex + 1} of ${this.quizSet.length}`}</span>
                     {
                         options.map(option =>
                             <p key={option.id} className={`options ${userAnswer === option ? "selected" : null}`} 
@@ -129,7 +131,7 @@ export class Quiz1 extends Component {
                     <h1>  </h1>
                 </div>
 
-                    {currentIndex < Quizdata1.length - 1 && 
+                    {currentIndex < this.quizSet.length - 1 && 
                     <button disabled = {this.state.disabled} onClick={this.nextQuestionHandler}>
                         Next Question
                     </button>}
@@ -138,7 +140,7 @@ export class Quiz1 extends Component {
                     <h1>  </h1>
                 </div>
 
-                    {currentIndex === Quizdata1.length - 1 && 
+                    {currentIndex === this.quizSet.length - 1 && 
                     <button onClick={this.finishHandler}>
                         Finish
                     </button>
@@ -149,3 +151,16 @@ export class Quiz1 extends Component {
     }    
 }
 
+
+export class Quiz2 extends Quiz1{
+
+    constructor(props) {
+        super(props)
+        
+        this.number = 2
+        this.quizSet = Quizdata2
+        
+    }
+
+    
+}

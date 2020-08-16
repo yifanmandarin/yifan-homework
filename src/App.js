@@ -24,6 +24,7 @@ function App() {
         <Switch>
           <Route path="/yifan-homework/quiz" exact component={Quiz} />
             <Route path="/yifan-homework/quiz/quiz1" component={Quiz1} />
+            <Route path="/yifan-homework/quiz/quiz2" component={Quiz2} />
           <Route path="/yifan-homework/reading" exact component={Reading} />
             <Route path="/yifan-homework/reading/international" exact component={Int_read} />
               <Route path="/yifan-homework/reading/international/reading1" component={iReading1} />
