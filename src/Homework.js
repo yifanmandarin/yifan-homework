@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 
 
 function Homework() {
+  
+  let listyle = {
+    margin: "10px",
+    textAlign: "center"
+  }
+  
   return (
    <div>
       <div className="Homework">
@@ -14,10 +20,11 @@ function Homework() {
       
       <div>
         <ul>
-          <Link to="/yifan-homework/homework/hw1"><li style={{textAlign:"center"}}>Homework 1</li></Link>
+          <Link to="/yifan-homework/homework/hw1"><li style={listyle}>Homework 1</li></Link>
+          <Link to="/yifan-homework/homework/hw2"><li style={listyle}>Homework 2</li></Link>
         </ul>
       </div>
-    </div> 
+    </div>
   );
 }
 

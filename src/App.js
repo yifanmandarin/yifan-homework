@@ -7,7 +7,11 @@ import Quiz from './Quiz';
 import {Quiz1, Quiz2} from './Quiz1';
 import Homework from './Homework';
 import Reading from './Reading';
-import Hw1 from './Hw1';
+import {Hw1, Hw2} from './Hw1';
+import Int_read from './Int-read';
+import {iReading1, iReading2} from './IntReading0';
+import Nat_read from './Native-read';
+import {nReading1, nReading2} from './NatReading0';
 
 
 
@@ -20,9 +24,16 @@ function App() {
         <Switch>
           <Route path="/yifan-homework/quiz" exact component={Quiz} />
             <Route path="/yifan-homework/quiz/quiz1" component={Quiz1} />
-          <Route path="/yifan-homework/reading" component={Reading} />
+          <Route path="/yifan-homework/reading" exact component={Reading} />
+            <Route path="/yifan-homework/reading/international" exact component={Int_read} />
+              <Route path="/yifan-homework/reading/international/reading1" component={iReading1} />
+              <Route path="/yifan-homework/reading/international/reading2" component={iReading2} />
+            <Route path="/yifan-homework/reading/native" exact component={Nat_read} />
+              <Route path="/yifan-homework/reading/native/reading1" component={nReading1} />
+              <Route path="/yifan-homework/reading/native/reading2" component={nReading2} />
           <Route path="/yifan-homework/homework" exact component={Homework} />
-          <Route path="/yifan-homework/homework/hw1" component={Hw1} />
+            <Route path="/yifan-homework/homework/hw1" component={Hw1} />
+            <Route path="/yifan-homework/homework/hw2" component={Hw2} />
           <Route path="/yifan-homework" exact component={Home}/>
           {/*<Route render={() => <Redirect to={{pathname: "/yifan-homework"}} />} />*/}
         </Switch>
